@@ -7,7 +7,18 @@
     <title>Fridge</title>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <h2></h2>
+
+    <a href="" class="brand-logo left">Fridge App (Working Title)</a>
+
+    <ul class="right">
+        <li>
+        <% if (user) { %>
+            <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+        <% } else { %>
+            <a href="/auth/google"><i class="material-icons left"></i>Log in with Google</a>
+        <% } %>
+        </li>
+    </ul>
+   
 </body>
 </html>

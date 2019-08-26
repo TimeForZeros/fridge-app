@@ -2,6 +2,7 @@ var passport = require("passport");
 var GoogleStrategy = require("passport-google-oauth20").Strategy;
 var User = require("../models/user");
 
+//config passp
 passport.use(
   new GoogleStrategy(
     {
@@ -11,10 +12,16 @@ passport.use(
     },
     function(accessToken, refreshToken, profile, cb) {
       //a user has been logged in with OAuth...
-      User.findOne({ googleId: profile.id }, function(err, user) {
+      User.findOne({ 'googleId': profile.id }, function(err, user) {
         if (err) return cb(err);
         if (user) {
-          return cb(null, user);
+          // if (!user.avatar) {
+          //   user.avatar = profile.photos[0].value;
+          //   user.save(function(err) {
+          //     return cb(null, user);
+          //   });
+          // } else {
+            return cb(null, user);
         } else {
           //We have a first time user via OAuth!
           var newUser = new User({
@@ -32,9 +39,11 @@ passport.use(
   )
 );
 
+
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
+
 passport.deserializeUser(function(id, done) {
   User.findById(id, function(err, user) {
     done(err, user);
