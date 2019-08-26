@@ -1,8 +1,6 @@
 var mongoose = require('mongoose');
 
-var Schema = mongoose.Schema;
-
-var itemSchema = new Schema ({
+var itemSchema = new mongoose.Schema ({
 name: {type: String},
 foodType: {type: String},
 expirationDate: {type: Date},
