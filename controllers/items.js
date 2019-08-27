@@ -2,11 +2,24 @@ var Item = require("../models/item");
 
 module.exports = {
   index,
-  newItem
+  newItem,
+  create
 };
 
+function create(req,res) {
+  var item = new Item(req.body);
+  item.save(function(err) {
+    if (err) return res.redirect('/items/new');
+    console.log(item);
+    res.redirect('/items');
+})}
+
 function newItem(req, res) {
-  res.render('items/new');
+  res.render('items/new', {
+ //   items,
+    user: req.user,
+    name: req.query.name
+  });
 }
 
 
@@ -22,10 +35,10 @@ function index(req, res, next) {
     if (err) return next(err);
     // Passing search values, name & sortKey, for use in the EJS
     res.render('items/index', {
-      items,
+ //     items,
       user: req.user,
       name: req.query.name,
-      sortKey
+ //     sortKey
     });
   });
 }

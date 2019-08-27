@@ -1,7 +1,6 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  display: flex;
 }
 
 a {
@@ -14,7 +13,6 @@ a {
 
 .navigation {
   display: flex;
-  width: 100vw;
   justify-content: flex-end;
   align-items: baseline;
 }
