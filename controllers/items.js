@@ -1,14 +1,14 @@
 var Item = require("../models/item");
 
 module.exports = {
-  index
+  index,
+  newItem
 };
 
-// function index(req, res) {
-//   Item.find({}, function(err, items) {
-//     res.render("items/index", { items });
-//   });
-// }
+function newItem(req, res) {
+  res.render('items/new');
+}
+
 
 function index(req, res, next) {
   console.log(req.query)
