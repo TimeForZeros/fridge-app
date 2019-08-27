@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var itemsCtrl = require('../controllers/items');
-var usersCtrl =require('../controllers/items')
 
-router.get('/', itemsCtrl.index);
-router.get('/new', itemsCtrl.newItem);
-router.post('/', itemsCtrl.create);
-
+router.get('/', isLoggedIn, itemsCtrl.index);
+router.get('/new', isLoggedIn, itemsCtrl.newItem);
+router.get('/:id', isLoggedIn, itemsCtrl.show);
+router.post('/', isLoggedIn, itemsCtrl.create);
+router.delete('/items/:id', isLoggedIn, itemsCtrl.deleteItem);
 
 
 

@@ -3,8 +3,10 @@
 <form action='/items/' method='POST'>
     <h3>Please Add A New Item</h3>
     <div>Food Name: <input type='text' name='foodName'> </div>
-    <div>Food Type: <input type='text' name='foodType'> </div>
-    <div>Expiration Date: <input type='text' name='expirationDate'></div>
+    <div>Food Type: <select name="foodType" id="">
+        <option value='Dairy'>Dairy</option>
+    </select> </div>
+    <div>Expiration Date: <input type="date" name='expirationDate'></div>
     <div>Storage Location: <input type='text' name='location'></div>
     <button type='submit'>Submit Item</button>
 </form>

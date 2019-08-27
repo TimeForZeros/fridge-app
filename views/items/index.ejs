@@ -1,1 +1,22 @@
 <%-include('../partials/header') %>
+
+<ul>
+<% items.forEach(function(item) { %>
+<li class="collection-item blue-grey-text text-darken-2">
+    <!-- Add delete form - don't forget to install method-override -->
+    <span class="title"><%- item.foodName %> </span>
+    <form action="/items/<%= item._id %>?_method=DELETE" method="POST" class="secondary-content">
+        <button type="submit" >X</button>
+    </form>
+</li>
+<% }) %>
+</ul>
+<% if (items._id === (user && user._id)) { %>
+<div class="card-action">
+    <form action="/items" method="POST">
+        <input type="text" name="text" class="white-text">
+        <button type="submit" class="btn white-text">Add item</button>
+    </form>
+</div>
+<% } %>
+</ul>

@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
-var methodOverride = require('method-override');
+var bodyParser = require('body-parser')
 
 
 require('dotenv').config();
@@ -14,6 +14,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var itemsRouter = require('./routes/items');
 
+var methodOverride = require('method-override');
 var app = express();
 
 //connect to MongoDB with mongoose
@@ -26,7 +27,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(methodOverride('_method'));
-
+app.use(bodyParser.urlencoded({ extended: false }));
+ 
 
 app.use(logger('dev'));
 app.use(express.json());

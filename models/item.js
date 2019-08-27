@@ -4,8 +4,11 @@ var itemSchema = new mongoose.Schema ({
 foodName: {type: String},
 foodType: {type: String},
 expirationDate: {type: Date},
-inputDate: {type: Date},
-location: {type: String}
+location: {type: String},
+googleId: String
+},
+{
+timestamps: true
 });
 
 
