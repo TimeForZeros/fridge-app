@@ -4,6 +4,7 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var methodOverride = require('method-override');
 var passport = require('passport');
 var bodyParser = require('body-parser')
 
@@ -14,7 +15,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var itemsRouter = require('./routes/items');
 
-var methodOverride = require('method-override');
 var app = express();
 
 //connect to MongoDB with mongoose

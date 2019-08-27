@@ -6,7 +6,7 @@ router.get('/', isLoggedIn, itemsCtrl.index);
 router.get('/new', isLoggedIn, itemsCtrl.newItem);
 router.get('/:id', isLoggedIn, itemsCtrl.show);
 router.post('/', isLoggedIn, itemsCtrl.create);
-router.delete('/items/:id', isLoggedIn, itemsCtrl.deleteItem);
+router.delete('/:id', isLoggedIn, itemsCtrl.deleteItem);
 
 
 

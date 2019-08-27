@@ -5,15 +5,18 @@ module.exports = {
   newItem,
   create,
   show,
-  deleteItem
+  deleteItem,
+  
 };
 
+// function updateItem(req, res, next) {
+//   Item.findByIdAndUpdate(req.params.id , function(err, items) {
+//       res.redirect("/items");
+//   });
+// }
 function deleteItem(req, res, next) {
-  Item.findById(req.params.id , function(err, items) {
-    items.id(req.params.id).remove();
-    items.save(function(err) {
-      res.redirect("items");
-    });
+  Item.findByIdAndRemove(req.params.id , function(err, items) {
+      res.redirect("/items");
   });
 }
 
