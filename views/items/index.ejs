@@ -4,10 +4,12 @@
 <% items.forEach(function(item) { %>
 <li class="collection-item blue-grey-text text-darken-2">
     <!-- Add delete form - don't forget to install method-override -->
-    <span class="title"><%- item.foodName %> </span>
-    <form action="/items/<%= item._id %>?_method=DELETE" method="POST" class="secondary-content">
-        <button type="submit" >X</button>
-    </form>
+    <span class="list-item"><%- item.foodName + '  ' + item.expirationDate %> 
+        <form action="/items/<%= item._id %>?_method=DELETE" method="POST" class="secondary-content">
+            <button class='itemInput' type="submit" >Delete</button>
+        </form>
+    </span>
+   
 </li>
 <% }) %>
 </ul>
