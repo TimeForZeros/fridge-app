@@ -1,7 +1,8 @@
 body {
   background-color: rgb(173, 228, 228);
 
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(20, 43, 43);
 }
 
 a {
@@ -29,6 +30,11 @@ a {
   font-size: 20px;
   font-weight: bold;
 }
+.oauth {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
 ul {
   list-style-type: none;
 }
@@ -41,10 +47,89 @@ ul {
 .add-page {
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
-
 }
 
 .add-main {
-grid-column: 2;
+  grid-column: 2;
+}
 
+.indexLogin {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: rgb(10, 119, 119);
+  text-align: center;
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+  display: block;
+}
+.indexLogin :hover {
+  display: block;
+  color: white;
+}
+
+.indexLogin:active {
+  background-color: teal;
+  display: block;
+}
+
+.welcome > h1 {
+  text-align: center;
+}
+
+input {
+  background-color: rgb(213, 247, 247);
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+  margin: 10px;
+  color: rgb(20, 43, 43);
+  font-size: 16px;
+}
+select {
+  background-color:  rgb(213, 247, 247);
+  border: none;
+  padding: 5px;
+  font-size: 16px;
+  color: rgb(20, 43, 43);
+}
+
+.itemInput {
+  border: none;
+  color: rgb(173, 228, 228);
+  background-color: rgb(83, 163, 163);
+  font-size: 20px;
+  border-radius: 2px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 10px;
+  box-shadow: 2.5px 2.5px rgba(0, 0, 0, 0.05);
+}
+input[type="radio"] {
+  display: flex;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  align-content: baseline;
+  outline: none;
+  color: rgb(173, 228, 228);
+  background-color:  rgb(213, 247, 247);
+  align-items: baseline;
+}
+input[type="radio"]:checked {
+  background-color: rgb(83, 163, 163);
+}
+
+
+.location-container {
+ border: 2px dashed rgb(83, 163, 163);
+ width: 100px;
+ margin-left: 20px;
+ padding-left: 20px;
+ padding-right: 10px;
+ padding-bottom: 10px;
 }
