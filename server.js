@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var methodOverride = require('method-override');
 var passport = require('passport');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 
 
 require('dotenv').config();

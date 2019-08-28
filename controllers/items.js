@@ -7,13 +7,32 @@ module.exports = {
   show,
   deleteItem,
   updateItem,
-  fridgeCheck
-
+  fridgeCheck,
+  freezerCheck,
+  cupboardCheck
 };
 
-function fridgeCheck(req,res){
-  Item.find({'location': 'Fridge'}, function(err, items){
-    res.render('items/fridge', {
+function cupboardCheck(req, res) {
+  Item.find({ location: "Cupboard" }, function(err, items) {
+    res.render("items/cupboard", {
+      items,
+      user: req.user,
+      name: req.query.name
+    });
+  });
+}
+function freezerCheck(req, res) {
+  Item.find({ location: "Freezer" }, function(err, items) {
+    res.render("items/freezer", {
+      items,
+      user: req.user,
+      name: req.query.name
+    });
+  });
+}
+function fridgeCheck(req, res) {
+  Item.find({ location: "Fridge" }, function(err, items) {
+    res.render("items/fridge", {
       items,
       user: req.user,
       name: req.query.name
@@ -21,24 +40,23 @@ function fridgeCheck(req,res){
   });
 }
 function updateItem(req, res, next) {
-  Item.findByIdAndUpdate(req.params.id , function(err, items) {
-      res.redirect("/items");
+  Item.findByIdAndUpdate(req.params.id, function(err, items) {
+    res.redirect("/items");
   });
 }
 
-
 function deleteItem(req, res, next) {
-  Item.findByIdAndRemove(req.params.id , function(err, items) {
-      res.redirect("/items");
+  Item.findByIdAndRemove(req.params.id, function(err, items) {
+    res.redirect("/items");
   });
 }
 
 function show(req, res) {
   Item.findById(req.params.id, function(err, items) {
-    res.render('items/show', { 
+    res.render("items/show", {
       items,
-     user: req.user,
-     name: req.query.name
+      user: req.user,
+      name: req.query.name
     });
   });
 }
@@ -69,7 +87,7 @@ function index(req, res, next) {
     : {};
   // Default to sorting by name
   Item.find(modelQuery)
-    .sort({'expirationDate': 1})
+    .sort({ expirationDate: 1 })
     .exec(function(err, items) {
       if (err) return next(err);
       res.render("items/index", {
