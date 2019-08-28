@@ -5,7 +5,8 @@ foodName: {type: String},
 foodType: {type: String},
 expirationDate: {type: String},
 location: {type: String},
-googleId: String
+googleId: String,
+userId: String
 },
 {
 timestamps: true

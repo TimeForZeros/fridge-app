@@ -34,6 +34,7 @@ function show(req, res) {
 }
 
 function create(req, res) {
+  req.body.userId = req.user.id;
   var item = new Item(req.body);
   item.save(function(err) {
     if (err) return res.redirect("/items/new");
