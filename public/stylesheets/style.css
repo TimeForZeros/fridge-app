@@ -78,6 +78,13 @@ ul {
   text-align: center;
 }
 
+.add-page{
+display: box;
+width: 80vw;
+margin-left: auto;
+margin-right: auto;
+}
+
 input {
   background-color: rgb(213, 247, 247);
   border: none;
@@ -108,6 +115,12 @@ select {
   margin: 10px;
   box-shadow: 2.5px 2.5px rgba(0, 0, 0, 0.05);
 }
+.itemInput:hover {
+  color: white;
+}
+.itemInput:active {
+  background-color: teal;
+}
 input[type="radio"] {
   display: flex;
   -webkit-appearance: none;
@@ -128,8 +141,9 @@ input[type="radio"]:checked {
 .location-container {
  border: 2px dashed rgb(83, 163, 163);
  width: 100px;
- margin-left: 20px;
- padding-left: 20px;
+ padding-left: 40px;
  padding-right: 10px;
  padding-bottom: 10px;
+ margin-top: 10px;
 }
+
