@@ -6,20 +6,26 @@ module.exports = {
   create,
   show,
   deleteItem,
-  updateItem
-  //fridgeCheck
+  updateItem,
+  fridgeCheck
 
 };
 
+function fridgeCheck(req,res){
+  Item.find({'location': 'Fridge'}, function(err, items){
+    res.render('items/fridge', {
+      items,
+      user: req.user,
+      name: req.query.name
+    });
+  });
+}
 function updateItem(req, res, next) {
   Item.findByIdAndUpdate(req.params.id , function(err, items) {
       res.redirect("/items");
   });
 }
 
-// function fridgeCheck(req,res){
-//   Item.find(req.params.id)
-// }
 
 function deleteItem(req, res, next) {
   Item.findByIdAndRemove(req.params.id , function(err, items) {
@@ -28,8 +34,12 @@ function deleteItem(req, res, next) {
 }
 
 function show(req, res) {
-  Item.findById(req.params.id, function(err, movie) {
-    res.render('items/show', { items });
+  Item.findById(req.params.id, function(err, items) {
+    res.render('items/show', { 
+      items,
+     user: req.user,
+     name: req.query.name
+    });
   });
 }
 

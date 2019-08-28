@@ -4,7 +4,8 @@ var itemsCtrl = require('../controllers/items');
 
 router.get('/', isLoggedIn, itemsCtrl.index);
 router.get('/new', isLoggedIn, itemsCtrl.newItem);
-router.get('/:id', isLoggedIn, itemsCtrl.show);
+router.get('/fridge', isLoggedIn, itemsCtrl.fridgeCheck)
+//router.get('/:id', isLoggedIn, itemsCtrl.show);
 router.post('/', isLoggedIn, itemsCtrl.create);
 router.delete('/:id', isLoggedIn, itemsCtrl.deleteItem);
 
