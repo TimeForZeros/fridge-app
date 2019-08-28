@@ -6,14 +6,21 @@ module.exports = {
   create,
   show,
   deleteItem,
-  
+  updateItem
+  //fridgeCheck
+
 };
 
-// function updateItem(req, res, next) {
-//   Item.findByIdAndUpdate(req.params.id , function(err, items) {
-//       res.redirect("/items");
-//   });
+function updateItem(req, res, next) {
+  Item.findByIdAndUpdate(req.params.id , function(err, items) {
+      res.redirect("/items");
+  });
+}
+
+// function fridgeCheck(req,res){
+//   Item.find(req.params.id)
 // }
+
 function deleteItem(req, res, next) {
   Item.findByIdAndRemove(req.params.id , function(err, items) {
       res.redirect("/items");

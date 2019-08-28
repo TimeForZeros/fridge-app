@@ -1,12 +1,25 @@
 <%-include('../partials/header') %>
 <title>Add Item</title>
-<form action='/items/' method='POST'>
-    <h3>Please Add A New Item</h3>
+<form action='/items/' method='POST' class="add-page">
+    <section class='add-main'>
+    <h3>New Item</h3>
     <div>Food Name: <input type='text' name='foodName'> </div>
-    <div>Food Type: <select name="foodType" id="">
-        <option value='Dairy'>Dairy</option>
-    </select> </div>
+    <div>Food Type:
+        <select name="foodType" id="">
+            <option value=''>---</option>
+            <option value='dairy'>Dairy</option>
+            <option value='fish'>Fish</option>
+            <option value='fruit'>Fruit</option>
+            <option value='meat'>Meat</option>
+            <option value='bread'>Bread</option>
+            <option value='vegetable'>Vegetable</option>
+        </select>
+    </div>
     <div>Expiration Date: <input type="date" name='expirationDate'></div>
-    <div>Storage Location: <input type='text' name='location'></div>
+    <div>Storage Location: Fridge <input type='radio' name='location' value='Fridge'> Freezer <input type='radio'
+            name='location' value='Freezer'>
+        Cupboard <input type='radio' name='location' value='Cupboard'>
+    </div>
     <button type='submit'>Submit Item</button>
+</section>
 </form>

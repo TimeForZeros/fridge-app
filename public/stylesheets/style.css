@@ -1,26 +1,50 @@
 body {
-  padding: 50px;
+  background-color: rgb(173, 228, 228);
+
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00b7ff;
+  color: rgb(123, 218, 218);
+  text-decoration: none;
 }
 
 .fridge-title {
-
 }
 
 .navigation {
   display: flex;
   justify-content: flex-end;
   align-items: baseline;
+  background-color: rgb(83, 163, 163);
+  color: rgb(20, 43, 43);
+
+  width: 100vw;
+  height: 7.5vh;
+  margin-top: -10px;
 }
 
 .navigation > span {
-
-  padding: 10px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
 ul {
   list-style-type: none;
+}
+
+.navigation > span :hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.add-page {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+
+}
+
+.add-main {
+grid-column: 2;
+
 }
