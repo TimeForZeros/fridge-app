@@ -4,7 +4,7 @@
     <h3 class='item-exp'>Expiration Date</h3>
     <% items.forEach(function(item) { %>
         <% if (user.id === item.userId) { %>
-                <span class='item-name'><%= item.foodName %></span>
+                <span class='item-name'><a href='items/<$items._id%>'><%= item.foodName %></a></span>
                 <span class='item-exp'><%= item.expirationDate %> </span>
                 <span class='item-delete'>
                     <form action="/items/<%= item._id %>?_method=DELETE" method="POST" class="secondary-content">
@@ -14,5 +14,10 @@
                 
                 <% } %>
                 <% }) %>
+                <form id='add-item' action='../items/new'>
+                 <button  class='itemInput' type="submit">Add New Item</button>
+                 </form>
             </div>
+
+
 </section>
