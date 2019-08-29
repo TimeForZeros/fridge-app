@@ -9,15 +9,22 @@
             <% var expCheck = item.expirationDate.replace(/-/g, ""); %>
             <% expCheck = parseInt(expCheck); %>
             <% if (expCheck - dateToday <= 3) { %>
-                <% if (expCheck - dateToday > 0) { %>
-                    expiring in <%= expCheck - dateToday %> days
-                <% } %>
-                <% if (expCheck - dateToday <= 0) { %>
-                 <font color='red'>EXPIRED!!!</font> 
-                <% } %>
-                <% } %>
-                <% if (expCheck - dateToday > 3) { %>
-                <%= item.expirationDate %>
+            <% if (expCheck - dateToday > 0) { %>
+            <font color='#9E7928'>EXPIRING IN <%= expCheck - dateToday %>
+                <% if (expCheck - dateToday > 1) { %>
+                DAYS!</font>
+            <% } %>
+            <% if (expCheck - dateToday === 1){ %>
+            DAY!</font>
+            <% } %>
+            <% } %>
+            <% if (expCheck - dateToday <= 0) { %>
+
+            <font color='#B32C0B'>EXPIRED!!!</font>
+            <% } %>
+            <% } %>
+            <% if (expCheck - dateToday > 3) { %>
+            <font color = 'teal'> <%= item.expirationDate %> </font>
             <% } %>
         </span>
         <span class='item-delete'>
