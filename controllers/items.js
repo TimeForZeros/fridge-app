@@ -22,8 +22,18 @@ function updateItem(req, res, next) {
   });
 }
 function cupboardCheck(req, res) {
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1;
+  var yyyy = today.getFullYear();
+  mm = mm.toString();
+  dd = dd.toString();
+  var dateToday = yyyy.toString() + mm.padStart(2, "0") + dd.padStart(2, "0");
+  dateToday = parseInt(dateToday);
+
   Item.find({ location: "Cupboard" }, function(err, items) {
     res.render("items/cupboard", {
+      dateToday,
       items,
       user: req.user,
       name: req.query.name
@@ -31,8 +41,18 @@ function cupboardCheck(req, res) {
   });
 }
 function freezerCheck(req, res) {
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1;
+  var yyyy = today.getFullYear();
+  mm = mm.toString();
+  dd = dd.toString();
+  var dateToday = yyyy.toString() + mm.padStart(2, "0") + dd.padStart(2, "0");
+  dateToday = parseInt(dateToday);
+
   Item.find({ location: "Freezer" }, function(err, items) {
     res.render("items/freezer", {
+      dateToday,
       items,
       user: req.user,
       name: req.query.name
@@ -40,8 +60,18 @@ function freezerCheck(req, res) {
   });
 }
 function fridgeCheck(req, res) {
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1;
+  var yyyy = today.getFullYear();
+  mm = mm.toString();
+  dd = dd.toString();
+  var dateToday = yyyy.toString() + mm.padStart(2, "0") + dd.padStart(2, "0");
+  dateToday = parseInt(dateToday);
+
   Item.find({ location: "Fridge" }, function(err, items) {
     res.render("items/fridge", {
+      dateToday,
       items,
       user: req.user,
       name: req.query.name
@@ -103,8 +133,6 @@ function index(req, res, next) {
   dd = dd.toString();
   var dateToday = yyyy.toString() + mm.padStart(2, "0") + dd.padStart(2, "0");
   dateToday = parseInt(dateToday);
-  console.log(dateToday);
-
   var modelQuery = req.query.name
     ? { name: new RegExp(req.query.name, "i") }
     : {};
