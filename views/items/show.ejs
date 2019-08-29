@@ -1,9 +1,15 @@
 <%-include('../partials/header') %>
 
-<% items.forEach(function(item) { %>
-    <h1><%=item.foodName%> Details</h1>
+<section class='details-container'>
+    <h1><%=items.foodName%> Details</h1>
     <div>Food Type: <%= items.foodType %></div>
     <div>Expiration Date: <%= items.expirationDate %></div>
     <div>Location: <%= items.location %></div>
     <div>Input Date: <%= items.timestamps %></div>
-    <% }) %>
+</section>
+
+<form action="/items/<%= items._id %>?_method=PUT" method='POST'>
+<h1 class="location-title">UPDATE ITEM</h1>
+<div>Location: <input type='text' name='location'></div>
+    <button class='itemInput' type='submit'>Update Item</button>
+</form>
