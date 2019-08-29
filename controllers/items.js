@@ -52,6 +52,7 @@ function deleteItem(req, res, next) {
 }
 
 function show(req, res) {
+  req.body.userId = req.user.id;
   Item.findById(req.params.id, function(err, items) {
     res.render("items/show", {
       items,
@@ -83,12 +84,12 @@ function index(req, res, next) {
   // Make the query object to use with Item.find based up
   // the user has submitted the search form or now
   let modelQuery = req.query.name
-    ? { name: new RegExp(req.query.name, "i") }
-    : {};
-  // Default to sorting by name
+  ? { name: new RegExp(req.query.name, "i") }
+  : {};
   Item.find(modelQuery)
-    .sort({ expirationDate: 1 })
-    .exec(function(err, items) {
+  .sort({ expirationDate: 1 })
+  .exec(function(err, items) {
+    console.log(modelQuery);
       if (err) return next(err);
       res.render("items/index", {
         items,

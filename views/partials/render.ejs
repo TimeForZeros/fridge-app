@@ -1,0 +1,21 @@
+<%-include('../partials/header') %>
+<section class='item-container'>
+    
+    <div class='item-table'>
+    <h3 class='item-name'>Item</h3>
+    <h3 class='item-exp'>Expiration Date</h3>
+    <% items.forEach(function(item) { %>
+        <% if (user.id === item.userId) { %>
+        <!-- Add delete form - don't forget to install method-override -->
+                <span class='item-name'><%= item.foodName %></span>
+                <span class='item-exp'><%= item.expirationDate %> </span>
+                <span class='item-delete'>
+                    <form action="/items/<%= item._id %>?_method=DELETE" method="POST" class="secondary-content">
+                        <button class='itemInput' type="submit">Delete</button>
+                    </form>
+                </span>
+                
+                <% } %>
+                <% }) %>
+            </div>
+</section>
