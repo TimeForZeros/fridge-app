@@ -1,23 +1,37 @@
 <section class='item-container'>
     <div class='item-table'>
-    <h3 class='item-name'>Item</h3>
-    <h3 class='item-exp'>Expiration Date</h3>
-    <% items.forEach(function(item) { %>
+        <h3 class='item-name'>Item</h3>
+        <h3 class='item-exp'>Expiration Date</h3>
+        <% items.forEach(function(item) { %>
         <% if (user.id === item.userId) { %>
-                <span class='item-name'><a href='/items/<%= item._id %>'><%= item.foodName %></a></span>
-                <span class='item-exp'><%= item.expirationDate %> </span>
-                <span class='item-delete'>
-                    <form action="/items/<%= item._id %>?_method=DELETE" method="POST" class="secondary-content">
-                        <button class='itemInput' type="submit">Delete</button>
-                    </form>
-                </span>
-                
+        <span class='item-name'><a href='/items/<%= item._id %>'><%= item.foodName %></a></span>
+        <span class='item-exp'>
+            <% var expCheck = item.expirationDate.replace(/-/g, ""); %>
+            <% expCheck = parseInt(expCheck); %>
+            <% if (expCheck - dateToday <= 3) { %>
+                <% if (expCheck - dateToday > 0) { %>
+                    expiring in <%= expCheck - dateToday %> days
                 <% } %>
-                <% }) %>
-                <form id='add-item' action='../items/new'>
-                 <button  class='itemInput' type="submit">Add New Item</button>
-                 </form>
-            </div>
+                <% if (expCheck - dateToday <= 0) { %>
+                 <font color='red'>EXPIRED!!!</font> 
+                <% } %>
+                <% } %>
+                <% if (expCheck - dateToday > 3) { %>
+                <%= item.expirationDate %>
+            <% } %>
+        </span>
+        <span class='item-delete'>
+            <form action="/items/<%= item._id %>?_method=DELETE" method="POST" class="secondary-content">
+                <button class='itemInput' type="submit">Delete</button>
+            </form>
+        </span>
+
+        <% } %>
+        <% }) %>
+        <form id='add-item' action='../items/new'>
+            <button class='itemInput' type="submit">Add New Item</button>
+        </form>
+    </div>
 
 
 </section>

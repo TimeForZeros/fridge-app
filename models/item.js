@@ -5,6 +5,7 @@ foodName: {type: String},
 foodType: {type: String},
 expirationDate: {type: String},
 location: {type: String},
+inputDate: {type: String},
 googleId: String,
 userId: String
 },
