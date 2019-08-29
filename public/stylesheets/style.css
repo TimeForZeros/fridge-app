@@ -10,9 +10,6 @@ a {
   text-decoration: none;
 }
 
-.fridge-title {
-}
-
 .navigation {
   display: flex;
   justify-content: flex-end;
@@ -147,9 +144,43 @@ input[type="radio"]:checked {
  margin-top: 10px;
 }
 
-.list-item{
+.list-item {
   display: flex;
   align-items: baseline;
   font-size: 18px;
 }
 
+.item-container {
+display: grid;
+grid-template-columns: 1fr 3fr 1fr;
+}
+
+.item-table {
+display: grid;
+grid-column: 2;
+grid-template-columns: 1fr 1fr 1fr;
+justify-content: left;
+border: 3px dotted rgb(83, 163, 163);
+padding-left: 10%;
+padding-right: -10%;
+padding-bottom: 10%;
+
+
+}
+
+.item-name {
+grid-column: 1;
+display: flex;
+justify-content: left;
+}
+
+.item-exp {
+  grid-column: 2;
+  justify-content: flex-start;
+
+}
+
+.item-delete {
+  grid-column: 3;
+
+}
