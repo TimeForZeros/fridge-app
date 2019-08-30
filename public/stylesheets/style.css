@@ -202,3 +202,12 @@ margin-left: -10px;
   text-align: center;
   font-size: 54px;
 }
+
+.details-container {
+display: grid;
+grid-template-columns: 2fr 3fr 2fr;
+
+}
+.details-container * {
+  grid-column: 2;
+}
