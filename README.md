@@ -18,7 +18,7 @@ Users can go to fridge, freezer or cupboard pages and see what food is contained
 
 Users can view more details on their food by clicking on the food name. Users can see food type, current location, and input date. -CONCISE!
 
-##### UPDATE
+#### UPDATE
 From the food details page, users can update the location of their food, so when you refrigerate after opening, that jar of pickles goes straight to the fridge from the cupboard with the click of a button! WHOA!
 
 
