@@ -1,5 +1,7 @@
 # Welcome to What's In My Fridge, Foo!!!
 
+[Imgur](https://i.imgur.com/9xBhHhe.png)
+
 ## What is 'What's In My Fridge, Foo!!!'?
 WIMFF is a food inventory application that stores food information, type, expiration date, and location of storage. 
 
