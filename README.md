@@ -7,7 +7,7 @@ WIMFF is a food inventory application that stores food information, type, expira
 
 ### Features
 WIMFF lets you see where your food is in real time! Is it in the fridge? the freezer? or the dusty ol' cupboard? WHY NOT CHECK EM?!?!
-WIMFF also lets you determine if your food is going to expire soon. It warns you 3 days ahead of time in <font color="yellow"> ** alert yellow ** </font>, but warns you in <font color="red">** danger red **</font> when it has expired!
+WIMFF also lets you determine if your food is going to expire soon. It warns you 3 days ahead of time in alert yellow, but warns you in danger red when it has expired!
 
 ### User Functions
 
