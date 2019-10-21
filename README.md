@@ -4,6 +4,7 @@
 
 ## What is 'What's In My Fridge, Foo!!!'?
 WIMFF is a food inventory application that stores food information, type, expiration date, and location of storage. 
+[Link to App](http://whatsinmyfridgefoo.herokuapp.com/)
 
 ### Features
 WIMFF lets you see where your food is in real time! Is it in the fridge? the freezer? or the dusty ol' cupboard? WHY NOT CHECK EM?!?!
